@@ -65,6 +65,10 @@ body::before {
 
 .container__texto {
     margin: 16px 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
 }
 
 .container__texto-azul {
@@ -76,6 +80,19 @@ h1 {
     font-size: 72px;
 }
 
+.btn{
+    width: 300px;
+    height: 90px;
+    border-radius: 10px;
+    background-color: #1875E8;
+    border-style: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.p{
+    color: black;
+}
+
 h2,
 p,
 button {
@@ -85,4 +102,15 @@ button {
 h2 {
     font-size: 32px;
     font-weight: 400;
+}
+
+.form-control{
+    height: 5rem;
+    width: 20rem;
+    border-radius: 10px;
+    background-color:#041832;
+    color: white;
+    border-style: none;
+    font-size: 2rem;
+    text-align: center;
 }
