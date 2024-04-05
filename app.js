@@ -1,48 +1,37 @@
-const iniciarJogo = document.querySelector(".btn");
+const numeroMaximo = 100
+const numeroSecreto = Math.floor(Math.random() * numeroMaximo) + 1;
 const musica = new Audio('/musica/Missao impossivel.mp3');
-const titulo = document.querySelector('.titulo');
+const aplausos = new Audio("./musica/aplausos.mp3");
 
-let numeroMaximo = 300;
-let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1);
+let tentativas = 0;
 
-let chute;
-let tentativas = 1;
+musica.loop=true;
+musica.play();
 
-
-
-
-
-iniciarJogo.addEventListener("click", ()=>{
-
-  musica.loop = true;
-
-  if(musica.paused){
-    musica.play()
-  }else{
-    musica.pause()
-  };
-
-  iniciarJogo.style.display = "none"  
-
-  titulo.innerHTML = `
-  <h2>Escolha um número de 0 a 100:</h2>
-  <input type="number" id="numero-sugerido" class="form-control">
-  <button id="chutar" class="btn" aria-placeholder="btn" onclick="capturarValor()"><p>Chutar :)</p></button>
-  `;
-})
-
-function capturarValor(){
-
-  const valorDoChute = parseInt(document.getElementById("numero-sugerido").value);
-
-  if(valorDoChute == numeroSecreto){
-    titulo.textContent = `Parabéns, você acertou!`
-  }else{
-    if(valorDoChute > numeroSecreto){
-      titulo.textContent= `O número secreto é menor que ${valorDoChute}!`
-      ;
-    }else{
-      titulo.textContent=`O número secreto é maior que ${valorDoChute}`;
+function guessNumber() {
+    const guess = parseInt(document.getElementById('guess').value);
+    const mensagem = document.getElementById('mensagem');
+    
+    if (isNaN(guess) || guess < 1 || guess > numeroMaximo) {
+        mensagem.textContent = `Por favor, insira um número válido entre 1 e ${numeroMaximo}.`;
+        return;
     }
-  }
+
+    tentativas++;
+
+    if (guess === numeroSecreto) {
+        mensagem.textContent = `Parabéns! Você acertou o número secreto ${numeroSecreto} em ${tentativas} tentativas!`;
+        statusImage.style.display= "block";
+        musica.pause();
+        aplausos.play();
+    } else if (guess < numeroSecreto) {
+        mensagem.textContent = 'Tente um número maior.';
+        // Limpar o campo de entrada após um palpite incorreto
+        document.getElementById('guess').value = '';
+    } else {
+        mensagem.textContent = 'Tente um número menor.';
+        // Limpar o campo de entrada após um palpite incorreto
+        document.getElementById('guess').value = '';
+        
+    }
 }
