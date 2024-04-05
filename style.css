@@ -131,3 +131,41 @@ h2 {
     font-size: 2rem;
     text-align: center;
 }
+
+@media (max-width:450px) {
+
+    .container__conteudo{
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    .container__imagem-robo{
+        width: 150px;
+    }
+
+    .container__titulo{
+        font-size: 1rem;
+    }
+
+    .container__informacoes{
+        width: 100%;
+    }
+
+    .container__texto{
+        width: auto;
+    }
+
+    .mensagem{
+        font-size: 1rem;
+    }
+
+    .form-control{
+        height: 3rem;
+        width: 150px;
+    }
+
+    .btn{
+        height: 50px;
+        width: 150px;
+        font-size: 1rem;
+    }
+}
