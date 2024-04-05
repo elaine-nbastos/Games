@@ -15,19 +15,32 @@
 <body>
     <div class="container">
         <div class="container__conteudo">
-            <img src="./img/robot.png" alt="robô mergulhador" class="container__imagem-robo" />
-            <div class="container__informacoes">
-                    <h1>Adivinhe o Número!</h1>
-                <div class="container__texto">
-                    <p class="mensagem">Eu escolhi um número entre 1 e 100. Tente adivinhar qual é!</p>
-                    <div class="botoes">
-                        <input type="number" id="guess" class="form-control" placeholder="Digite seu palpite">
-                        <button class="btn" onclick="guessNumber()">Adivinhar</button>
-                    </div>                   
-                    <p class="mensagem" id="mensagem"></p>
-                    <img src="./img/trophy.png" alt="ícone de um troféu" id="statusImage" style="display:none;"/>
+            <h1>Adivinhe o Número!</h1>
+            <div class="container__principal">
+                <img src="./img/robot.png" alt="robô mergulhador" class="container__imagem-robo" />
+                <div class="container__informacoes">                    
+                    <div class="container__texto">
+                        <p class="mensagem">Eu escolhi um número entre 1 e 100. Tente adivinhar qual é!</p>
+                        <div class="botoes">
+                            <input type="number" id="guess" class="form-control" placeholder="Digite seu palpite">
+                            <button class="btn" onclick="guessNumber()">Adivinhar</button>
+                        </div>                   
+                        <p class="mensagem" id="mensagem"></p>
+                        <img src="./img/trophy.png" alt="ícone de um troféu" id="statusImage" style="display:none;"/>
+                    </div>
                 </div>
             </div>
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
         </div>
     </div>
     <script src="app.js" defer></script>
