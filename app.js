@@ -6,11 +6,13 @@ const aplausos = new Audio("./musica/aplausos.mp3");
 let tentativas = 0;
 
 musica.loop=true;
-musica.play();
+
 
 function guessNumber() {
     const guess = parseInt(document.getElementById('guess').value);
     const mensagem = document.getElementById('mensagem');
+
+    musica.play();
     
     if (isNaN(guess) || guess < 1 || guess > numeroMaximo) {
         mensagem.textContent = `Por favor, insira um número válido entre 1 e ${numeroMaximo}.`;
