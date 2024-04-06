@@ -24,7 +24,7 @@ function guessNumber() {
     if (guess === numeroSecreto) {
         mensagem.textContent = `Parabéns! Você acertou o número secreto ${numeroSecreto} em ${tentativas} tentativas!`;
         statusImage.style.display= "block";
-        musica.pause();
+        
         aplausos.play();
     } else if (guess < numeroSecreto) {
         mensagem.textContent = 'Tente um número maior.';
