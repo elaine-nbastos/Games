@@ -13,6 +13,7 @@ function guessNumber() {
     const mensagem = document.getElementById('mensagem');
 
     musica.play();
+
     
     if (isNaN(guess) || guess < 1 || guess > numeroMaximo) {
         mensagem.textContent = `Por favor, insira um número válido entre 1 e ${numeroMaximo}.`;
@@ -24,7 +25,7 @@ function guessNumber() {
     if (guess === numeroSecreto) {
         mensagem.textContent = `Parabéns! Você acertou o número secreto ${numeroSecreto} em ${tentativas} tentativas!`;
         statusImage.style.display= "block";
-        
+        musica.pause();
         aplausos.play();
     } else if (guess < numeroSecreto) {
         mensagem.textContent = 'Tente um número maior.';
